@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
+      rel="stylesheet"
+    />
+    <title>Notiz App</title>
+    <link
+      rel="shortcut icon"
+      href="./img/journal-bookmark.svg"
+      type="image/x-svg"
+    />
+  </head>
+  <body onload="render()">
+    <nav w3-include-html="templates/nav.html"></nav>
+    <section class="notes">
+      <h1>Notizen</h1>
+      <form id="form-create-note" class="form-create-note">
+        <div class="inputs-container">
+          <input
+            type="text"
+            id="title"
+            class="note-title"
+            placeholder="Überschrift"
+            required
+          />
+          <textarea
+            id="note"
+            cols="30"
+            rows="5"
+            placeholder="Notiz erstellen"
+            required
+            wrap="hard"
+          ></textarea>
+        </div>
+        <div class="buttons-container">
+          <button type="submit">
+            <img src="./img/file-plus.svg" alt="" />
+          </button>
+        </div>
+      </form>
+
+      <div id="notes-container" class="notes-container"></div>
+    </section>
+
+    <article id="edit-container" class="edit-container d-none">
+      <form id="form-edit-note" class="form-edit-note">
+        <div class="inputs-container">
+          <input
+            type="text"
+            id="title-edit"
+            class="note-title"
+            placeholder="Überschrift"
+            required
+          />
+          <textarea
+            name=""
+            cols="30"
+            rows="10"
+            id="note-edit"
+            class="note-text"
+            placeholder="Notiz bearbeiten"
+            required
+            wrap="hard"
+          >
+          </textarea>
+        </div>
+        <div class="buttons-container">
+          <button type="submit">
+            <img src="./img/file-plus.svg" alt="" />
+          </button>
+          <button onclick="deleteEditForm()">
+            <img src="./img/trash.svg" alt="" />
+          </button>
+        </div>
+        <span onclick="hidePopUpNote()">
+          <img src="./img/file-x-fill.svg" alt=""
+        /></span>
+      </form>
+    </article>
+    <article id="backgroundColorPicker" class="background-color-picker d-none" onclick="addDisplayNone()"></article>
+    <script src="./script.js"></script>
+  </body>
+</html>

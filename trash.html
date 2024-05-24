@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
+      rel="stylesheet"
+    />
+    <title>Notiz App</title>
+    <link
+      rel="shortcut icon"
+      href="./img/journal-bookmark.svg"
+      type="image/x-svg"
+    />
+  </head>
+  <body onload="renderTrash()">
+    <nav w3-include-html="templates/nav.html"></nav>
+    <section class="notes notes-trash">
+      <h1>Papierkorb</h1>
+      <h4>
+        Achtung: Wenn das Element von hier gelöscht wird, kann man es nicht mehr
+        wiederherstellen
+        <a onclick="deleteAllTrash()" href="#">Papierkorb leeren</a>
+      </h4>
+      <div id="notes-container-trash" class="notes-container"></div>
+    </section>
+    <article id="backgroundColorPicker" class="background-color-picker d-none" onclick="addDisplayNone()"></article>
+    <script src="./script.js"></script>
+  </body>
+</html>
